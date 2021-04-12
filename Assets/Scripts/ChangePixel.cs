@@ -9,10 +9,12 @@ public class ChangePixel : MonoBehaviour
     private MouseCursor mouseCursor;
     [SerializeField]
     private GameObject select;
+    private GameManager gameManager;
 
     private void Awake()
     {
         mouseCursor = FindObjectOfType<MouseCursor>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -40,6 +42,7 @@ public class ChangePixel : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 mouseCursor.SetImage(false);
+                gameManager.AddMoveNum();
             }
         }
         else select.SetActive(false);

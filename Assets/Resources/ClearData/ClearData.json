@@ -1,0 +1,84 @@
+{
+    "list": [
+        {
+            "name": "Sample2",
+            "time": "6초",
+            "rank": "★★★",
+            "minMoveNum": 5,
+            "moveNum": 5,
+            "isClear": true
+        },
+        {
+            "name": "가위",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "개구리",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "게임보이",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "고양이",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "물고기",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "부엉이",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "새",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "선인장",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        },
+        {
+            "name": "오리",
+            "time": "",
+            "rank": "",
+            "minMoveNum": 0,
+            "moveNum": 0,
+            "isClear": false
+        }
+    ]
+}
