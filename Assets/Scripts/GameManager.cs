@@ -21,21 +21,22 @@ public class GameManager : MonoBehaviour
     private static ClearData clearData;
     private float currentTime = 0;
     private int moveNum = 0;
+    private int minMoveNum = 0;
 
     private void Awake()
     {
-        texture = DataManager.texture;
+        texture = DataManager.instance.texture;
         LoadImage();
         CreateRandomImage();
     }
 
     private void Start()
     {
-        clearData = DataManager.FindClearData(DataManager.name);
+        clearData = DataManager.instance.FindClearData(DataManager.instance.name);
         int incorrectColorCount = 0;
         for (int i = 0; i < originColors.Length; i++)
             if (originColors[i] != randomImages[i].color) incorrectColorCount++;
-        clearData.minMoveNum = incorrectColorCount / 2 + 1;
+        minMoveNum = incorrectColorCount / 2 + 1;
     }
 
     private void Update()
@@ -85,8 +86,8 @@ public class GameManager : MonoBehaviour
         if (correctColorCount == texture.width * texture.height && Input.GetMouseButtonDown(0) == false)
         {
             clearData.moveNum = moveNum + 1;
-            if (clearData.moveNum < clearData.minMoveNum * 1.5f) clearData.rank = "★★★";
-            else if (clearData.moveNum < clearData.minMoveNum * 2f) clearData.rank = "★★☆";
+            if (clearData.moveNum < minMoveNum * 1.5f) clearData.rank = "★★★";
+            else if (clearData.moveNum < minMoveNum * 2f) clearData.rank = "★★☆";
             else clearData.rank = "★☆☆";
             clearData.isClear = true;
             SceneLoader.LoadScene("Result");

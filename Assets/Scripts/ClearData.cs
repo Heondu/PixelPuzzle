@@ -4,7 +4,6 @@ public class ClearData
     public string name;
     public string time;
     public string rank;
-    public int minMoveNum;
     public int moveNum;
     public bool isClear;
 
@@ -13,7 +12,6 @@ public class ClearData
         this.name = name;
         time = "";
         rank = "";
-        minMoveNum = 0;
         moveNum = 0;
         isClear = false;
     }

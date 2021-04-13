@@ -11,12 +11,12 @@ public class GalleryManager : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < DataManager.clearDatas.Count; i++)
+        for (int i = 0; i < DataManager.instance.clearDatas.Count; i++)
         {
-            if (DataManager.clearDatas[i].isClear)
+            if (DataManager.instance.clearDatas[i].isClear)
             {
                 GameObject clone = Instantiate(galleryImage, content);
-                clone.GetComponent<GalleryImage>().Init(ImageLoader.OnLoad(DataManager.clearDatas[i].name), DataManager.clearDatas[i].name);
+                clone.GetComponent<GalleryImage>().Init(ImageLoader.OnLoad(DataManager.instance.clearDatas[i].name), DataManager.instance.clearDatas[i].name);
             }
         }
     }

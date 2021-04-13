@@ -19,11 +19,11 @@ public class TitleImageLoader : MonoBehaviour
             ImageScript imageScript = clone.GetComponent<ImageScript>();
             imageScript.texture = texture;
 
-            ClearData clearData = DataManager.FindClearData(textures[i].name);
+            ClearData clearData = DataManager.instance.FindClearData(textures[i].name);
             if (clearData == null)
             {
                 clearData = new ClearData(textures[i].name);
-                DataManager.clearDatas.Add(clearData);
+                DataManager.instance.clearDatas.Add(clearData);
             }
             imageScript.clearData = clearData;
         }

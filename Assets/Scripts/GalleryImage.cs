@@ -18,8 +18,8 @@ public class GalleryImage : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        DataManager.texture = rawImage.texture as Texture2D;
-        DataManager.name = name.text;
+        DataManager.instance.texture = rawImage.texture as Texture2D;
+        DataManager.instance.name = name.text;
         SceneLoader.LoadScene("Popup");
     }
 }

@@ -36,8 +36,8 @@ public class ImageScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        DataManager.texture = texture;
-        DataManager.name = clearData.name;
+        DataManager.instance.texture = texture;
+        DataManager.instance.name = clearData.name;
         SceneLoader.LoadScene("Main");
     }
 }

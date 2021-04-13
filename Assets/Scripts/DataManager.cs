@@ -12,18 +12,21 @@ public class Serialization<T>
 
 public class DataManager : MonoBehaviour
 {
-    public static Texture2D texture;
-    public static new string name;
-    public static List<ClearData> clearDatas = new List<ClearData>();
+    public static DataManager instance;
+    public Texture2D texture;
+    public new string name;
+    public List<ClearData> clearDatas = new List<ClearData>();
 
     private void Awake()
     {
+        if (instance != null) Destroy(gameObject);
+        else instance = this;
         DontDestroyOnLoad(gameObject);
         if (JsonIO.LoadFromJson<Serialization<ClearData>>("ClearData") != null)
             clearDatas = JsonIO.LoadFromJson<Serialization<ClearData>>("ClearData").ToList();
     }
 
-    public static ClearData FindClearData(string name)
+    public ClearData FindClearData(string name)
     {
         for (int i = 0; i < clearDatas.Count; i++)
         {

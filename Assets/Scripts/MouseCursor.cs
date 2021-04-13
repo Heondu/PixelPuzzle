@@ -13,6 +13,7 @@ public class MouseCursor : MonoBehaviour
 
     private void Awake()
     {
+        if (FindObjectsOfType<MouseCursor>().Length != 1) Destroy(transform.parent.gameObject);
         DontDestroyOnLoad(transform.parent.gameObject);
         image = GetComponent<Image>();
         Cursor.visible = false;

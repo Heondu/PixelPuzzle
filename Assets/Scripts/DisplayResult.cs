@@ -17,8 +17,8 @@ public class DisplayResult : MonoBehaviour
 
     private void Awake()
     {
-        rawImage.texture = DataManager.texture;
-        ClearData clearData = DataManager.FindClearData(DataManager.name);
+        rawImage.texture = DataManager.instance.texture;
+        ClearData clearData = DataManager.instance.FindClearData(DataManager.instance.name);
         name.text = clearData.name;
         time.text = clearData.time;
         rank.text = clearData.rank;
