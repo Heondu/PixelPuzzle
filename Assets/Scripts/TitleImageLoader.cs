@@ -15,10 +15,9 @@ public class TitleImageLoader : MonoBehaviour
         for (int i = 0; i < textures.Length; i++)
         {
             GameObject clone = Instantiate(image, content);
-            Texture2D texture = ImageLoader.OnLoad(textures[i].name);
             ImageScript imageScript = clone.GetComponent<ImageScript>();
-            imageScript.texture = texture;
-
+            imageScript.texture = textures[i];
+        
             ClearData clearData = DataManager.instance.FindClearData(textures[i].name);
             if (clearData == null)
             {

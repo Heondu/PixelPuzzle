@@ -3,7 +3,7 @@ using System.IO;
 
 public class JsonIO : MonoBehaviour
 {
-    private static string path = "Assets/Resources/ClearData/";
+    private static string path = Application.streamingAssetsPath + "/";
 
     public static void SaveToJson<T>(T t, string fileName)
     {
@@ -21,6 +21,8 @@ public class JsonIO : MonoBehaviour
 
     private static bool IsExists(string fileName)
     {
+        DirectoryInfo directoryInfo = new DirectoryInfo(path);
+        if (directoryInfo.Exists == false) directoryInfo.Create();
         if (File.Exists(path + fileName + ".json")) return true;
         else return false;
     }

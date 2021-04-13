@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class GalleryManager : MonoBehaviour
 {
@@ -15,8 +13,9 @@ public class GalleryManager : MonoBehaviour
         {
             if (DataManager.instance.clearDatas[i].isClear)
             {
+                string name = DataManager.instance.clearDatas[i].name;
                 GameObject clone = Instantiate(galleryImage, content);
-                clone.GetComponent<GalleryImage>().Init(ImageLoader.OnLoad(DataManager.instance.clearDatas[i].name), DataManager.instance.clearDatas[i].name);
+                clone.GetComponent<GalleryImage>().Init(Resources.Load<Texture2D>("Images/" + name), name);
             }
         }
     }
